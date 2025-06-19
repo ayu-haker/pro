@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ayushman | Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #00d9ff;
+    }
+    .logo {
+      height: 50px;
+    }
+    .header-text {
+      text-align: center;
+      margin: 60px 0;
+    }
+    .header-text p {
+      color: #bbb;
+      font-size: 18px;
+    }
+    .header-text h1 {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+    .header-text span {
+      color: #00d9ff;
+    }
+    .sub-title {
+      text-align: center;
+      font-size: 36px;
+      margin: 50px 0 20px;
+      color: #00d9ff;
+    }
+    #about, #services, #portfolio, #contact {
+      padding: 60px 0;
+    }
+    .about-section, .services-list, .portfolio-grid, .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .about-col-1 img, .portfolio-item img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .about-col-2 {
+      flex: 1 1 300px;
+    }
+    .service-item {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    .service-item:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #00d9ff, #0088ff);
+      color: #000;
+    }
+    .service-item i {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #00d9ff;
+      transition: color 0.3s;
+    }
+    .service-item:hover i {
+      color: #000;
+    }
+    .read-more {
+      color: #00d9ff;
+      margin-top: 10px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .more-text {
+      display: none;
+      font-size: 14px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+    .tab-titles {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    .tab-links {
+      cursor: pointer;
+      padding: 10px 18px;
+      background: #1a1a1a;
+      border-radius: 5px;
+    }
+    .tab-links.active-link, .tab-links:hover {
+      background: #00d9ff;
+      color: #000;
+    }
+    .tab-contents {
+      display: none;
+      margin-top: 20px;
+    }
+    .tab-contents.active-tab {
+      display: block;
+    }
+    .contact-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .social-buttons a {
+      padding: 12px 20px;
+      border-radius: 5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .linkedin { background: #0077b5; }
+    .instagram { background: #e1306c; }
+    .whatsapp { background: #25d366; }
+    .github { background: #333; }
+    @media screen and (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+      }
+    }
+    nav ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+  }
+
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #00d9ff;
+    transition: width 0.4s ease;
+  }
+
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cv"><i class="fas fa-file-download" style="margin-right: 5px; color: #00d9ff;"></i>CV</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-text">
+      <p>Cyber-Security Analytics | Cloud Computing (AWS) | Web Development</p>
+      <h1>Hi, I'm <span>Ayushman</span><br />Bosu Roy From India</h1>
+    </div>
+    <div id="about">
+      <h2 class="sub-title">About Me</h2>
+      <div class="about-section">
+        <div class="about-col-1">
+          <img src="images/user.png" alt="Ayushman" />
+        </div>
+        <div class="about-col-2">
+          <p><strong>💻 Software Developer | 🔐 Cybersecurity Enthusiast | ☁️ AWS Cloud Explorer</strong></p>
+          <p>I’m Ayushman Bosu Roy — passionate about crafting tech that’s secure, scalable, and user-first. From deploying cloud apps to securing networks and building beautiful frontends, I thrive at the intersection of creativity and innovation.</p>
+          <p><em>🚀 Motto: "Code smart. Stay secure. Think cloud."</em></p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('Education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="Skills">
+            <ul>
+              <li>Web Development: UI/UX, responsive design</li>
+              <li>Firebase: Authentication & realtime DB</li>
+              <li>JavaScript: Dynamic frontend logic</li>
+              <li>Python: Backend & automation scripting</li>
+              <li>Cybersecurity: Pen-testing, mobile forensics</li>
+              <li>AWS: Deploy, scale, monitor cloud apps</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="Experience">
+            <ul><li>Python Trainee at Zeethron Network (June–July 2025)</li></ul>
+          </div>
+          <div class="tab-contents" id="Education">
+            <ul>
+              <li>PM SHRI Kendriya Vidyalaya — Schooling</li>
+              <li>IIT — Minor in AI/ML</li>
+              <li>GIT — B.Tech in Computer Science</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="services">
+      <h2 class="sub-title">My Services</h2>
+      <div class="services-list">
+        <div class="service-item">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Responsive sites & web apps using latest frameworks.</p>
+          <span class="read-more" onclick="toggleDescription(this)">Read More...</span>
+          <p class="more-text">I design and build modern, fast-loading, and mobile-first websites using tools like HTML, CSS, JavaScript, and frameworks like React and Vue.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Cybersecurity</h3>
+          <p>Pen-testing & securing systems from threats.</p>
+          <span class="read-more" onclick="toggleDescription(this)">Read More...</span>
+          <p class="more-text">Experienced in ethical hacking, vulnerability assessment, and forensic analysis to protect digital assets and user privacy.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Cloud Computing</h3>
+          <p>AWS solutions: deploy, scale, and monitor apps.</p>
+          <span class="read-more" onclick="toggleDescription(this)">Read More...</span>
+          <p class="more-text">Provisioning cloud infrastructure using AWS, CI/CD pipelines, S3, EC2, and monitoring solutions to ensure uptime and performance.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-brain"></i>
+          <h3>AI/ML</h3>
+          <p>AI-powered tools integrated with intelligent features.</p>
+          <span class="read-more" onclick="toggleDescription(this)">Read More...</span>
+          <p class="more-text">Building smart applications using machine learning algorithms and integrating AI APIs like ChatGPT and TensorFlow models.</p>
+        </div>
+      </div>
+    <div id="cv" style="background: #0f0f0f; padding: 60px 20px; text-align: center; color: #fff;">
+  <h2 class="sub-title" style="font-size: 36px; margin-bottom: 30px; border-bottom: 3px solid #00d9ff; display: inline-block; padding-bottom: 10px;">Download My CV</h2>
+  <p style="font-size: 18px; margin-bottom: 20px;">Click the button below to download my professional CV in PDF format.</p>
+  <a href="Resume.pdf" download style="background: #00d9ff; color: #000; padding: 12px 30px; font-size: 16px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Download CV</a>
+    <div style="margin-top: 30px; font-size: 18px; color: #bbb;">
+        <p>Or view it online:</p>
+        <a href="https://drive.google.com/file/d/16NVTAljeVpU9jN9zGdcWgFRzsfEiE22l/view?usp=sharing" target="_blank" style="color: #00d9ff; text-decoration: none;">View Online</a>
+</div>
+  
+    </div>
+    <div id="portfolio">
+      <h2 class="sub-title">My Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img src="images/work-1.png"><h3>Social Media Made Easy</h3><p>Unified platform for content creation & analytics.</p></div>
+        <div class="portfolio-item"><img src="images/work-2.png"><h3>Music on Mood</h3><p>AI-based music player based on emotional state.</p></div>
+        <div class="portfolio-item"><img src="images/work-3.png"><h3>E-Commerce Store</h3><p>Responsive e-store with secure checkout & real-time stock.</p></div>
+      </div>
+    </div>
+    <div id="contact" style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 60px 20px; color: #fff;">
+  <h2 class="sub-title" style="text-align: center; font-size: 36px; margin-bottom: 40px; border-bottom: 3px solid #00d9ff; display: inline-block; padding-bottom: 10px;">Contact Me</h2>
+
+  <div class="contact-wrapper" style="max-width: 1000px; margin: auto;">
+    <div class="contact-info" style="text-align: center; font-size: 18px; margin-bottom: 30px;">
+      <p>📞 <strong>+91 7063444943</strong></p>
+      <p>📧 <strong><a href="mailto:ayushmanbosuroy@gmail.com" style="color: #00d9ff; text-decoration: none;">ayushmanbosuroy@gmail.com</a></strong></p>
+    </div>
+</div>
+<div>
+    <form name="submit-to-google-sheet" 
+    style="background: #1a1a1a; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);">
+        
+            <input type="text" name="Name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: none; border-radius: 5px; background: #333; color: #fff; font-size: 16px;" />
+            <input type="email"name="Email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: none; border-radius: 5px; background: #333; color: #fff; font-size: 16px;" />
+            <textarea name="Massage" rows="5" placeholder="Your Message" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: none; border-radius: 5px; background: #333; color: #fff; font-size: 16px;"></textarea>
+            <button type="submit" style="background: #00d9ff; border: none; padding: 12px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; color: #000; transition: 0.3s ease;">Send Message</button>
+    </form>
+    <script>
+  // Tab switching logic
+  const tabLinks = document.querySelectorAll(".tab-links");
+  const tabContents = document.querySelectorAll(".tab-contents");
+
+  function opentab(tabName) {
+    event.preventDefault();
+    tabLinks.forEach(link => link.classList.remove("active-link"));
+    tabContents.forEach(tab => tab.classList.remove("active-tab"));
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabName).classList.add("active-tab");
+  }
+
+  // Read more toggle in services
+  function toggleDescription(elem) {
+    const moreText = elem.nextElementSibling;
+    if (moreText.style.display === "block") {
+      moreText.style.display = "none";
+      elem.innerText = "Read More...";
+    } else {
+      moreText.style.display = "block";
+      elem.innerText = "Read Less";
+    }
+  }
+
+  
+</script>
+
+</div>    
+
+    <div class="social-buttons" style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+      <a class="linkedin" href="https://www.linkedin.com/in/ayushman-bosu-roy-24b3842b1/" target="_blank" style="text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; color: #fff; background: #0077b5; display: flex; align-items: center; gap: 8px; transition: background 0.3s;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
+      <a class="instagram" href="https://www.instagram.com/anonymous_ayush_0821/" target="_blank" style="text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; color: #fff; background: #e1306c; display: flex; align-items: center; gap: 8px; transition: background 0.3s;"><i class="fab fa-instagram"></i> Instagram</a>
+
+      <a class="whatsapp" href="https://wa.me/917063444943" target="_blank" style="text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; color: #fff; background: #25d366; display: flex; align-items: center; gap: 8px; transition: background 0.3s;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+
+      <a class="github" href="https://github.com/ayu-haker" target="_blank" style="text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; color: #fff; background: #333; display: flex; align-items: center; gap: 8px; transition: background 0.3s;"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+
+  </div>
+</div>
+<div class="contact-wrapper" style="text-align: center; margin-top: 40px;"></div>
+  </div>
+</div>
+    <footer style="text-align: center; padding: 20px; background: #1a1a1a; margin-top: 40px;">
+      <p>&copy; 2025 Ayushman Bosu Roy. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    function opentab(tabName) {
+      tabLinks.forEach(link => link.classList.remove("active-link"));
+      tabContents.forEach(tab => tab.classList.remove("active-tab"));
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabName).classList.add("active-tab");
+    }
+
+    function toggleDescription(elem) {
+      const moreText = elem.nextElementSibling;
+      if (moreText.style.display === "block") {
+        moreText.style.display = "none";
+        elem.innerText = "Read More...";
+      } else {
+        moreText.style.display = "block";
+        elem.innerText = "Read Less";
+      }
+    }
+    
+  </script>
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyBzbFh5Zq0GuO1hJWSkn3E8koVeBzfmEiqZyrpF1m-xv7F3ebn8mECDnIb34OacgCv/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
